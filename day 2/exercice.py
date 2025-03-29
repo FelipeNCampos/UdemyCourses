@@ -5,3 +5,4 @@ people = int(input("How many people to split the bill? "))
 
 print(f"Each person should pay: $ {(bill+(bill*tip/100))/people:.2f}")
 
+a = "teste"
