@@ -2,8 +2,6 @@
 
 class App:
     alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-                 'n', 'o', 'p', 'q', 'r', 's', 't', 'u','v', 'w', 'x', 'y', 'z',
-                 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
                  'n', 'o', 'p', 'q', 'r', 's', 't', 'u','v', 'w', 'x', 'y', 'z']
     logo = """           
         ,adPPYba, ,adPPYYba,  ,adPPYba, ,adPPYba, ,adPPYYba, 8b,dPPYba,  
@@ -33,8 +31,9 @@ class App:
             
         if (answer == "encode"):
             message = input("Type your menssage: ")
-            shift = input("Type the shift number: ")
-
+            shift = int(input("Type the shift number: "))
+            while shift>=24:
+                shift -= 24
             result = self.encode(message,shift)
 
             print(f"Here's your encoded result : {result}")
@@ -42,6 +41,8 @@ class App:
         elif (answer == "decode"):
             message = input("Type your menssage: ")
             shift = input("Type the shift number: ")
+            while shift >= 24:
+                shift -= 24
 
             result = self.decode(message,shift)
 
