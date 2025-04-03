@@ -1,11 +1,21 @@
 import random
 
-class cassino:
+class blackjack:
 
     cards = []
     player = {'cards':[],'total':0}
     dealer = {'cards':[],'total':0}
     c_out = 0
+    logo = r"""
+    .------.            _     _            _    _            _    
+    |A_  _ |.          | |   | |          | |  (_)          | |   
+    |( \/ ).-----.     | |__ | | __ _  ___| | ___  __ _  ___| | __
+    | \  /|K /\  |     | '_ \| |/ _` |/ __| |/ / |/ _` |/ __| |/ /
+    |  \/ | /  \ |     | |_) | | (_| | (__|   <| | (_| | (__|   < 
+    `-----| \  / |     |_.__/|_|\__,_|\___|_|\_\ |\__,_|\___|_|\_\\
+        |  \/ K|                            _/ |                
+        `------'                           |__/           
+    """
 
 
     def mostrar(self,par):
@@ -66,6 +76,7 @@ class cassino:
         for c in range(2):
             self.take_card(self.player)
             self.take_card(self.dealer)
+        print(self.logo)
 
         self.mostrar(0)
 
@@ -73,7 +84,7 @@ class cassino:
         
         for c in range(5):
             while (ans not  in ['y','n']):
-                ans = input("Hit ? (y or n )").lower()
+                ans = input("\n\nHit ? (y or n )").lower()
             
             if (ans == 'y'):
                 if (self.take_card(self.player)):
@@ -99,5 +110,5 @@ class cassino:
         
 
 
-app = cassino()
-app.play()
+game = blackjack()
+game.play()
