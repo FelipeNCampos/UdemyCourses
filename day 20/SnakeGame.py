@@ -1,36 +1,42 @@
 from turtle import Turtle, Screen
-
-class Quadrado(Turtle):
-    def __init__(self, x, y):
-        super().__init__()
-        self.shape("square")
-        self.color("green")
-        self.penup()
-        self.goto(x, y)
-
-class SnakeGame:
-    screen = Screen()
-    
-    corpo = []
-    for c in range(3):
-        x = c * 20
-        corpo.append(Quadrado(x, 0))
-
-    def __init__(self):
-        self.screen = Screen()
-        self.screen.bgcolor("black")
-        self.screen.title("Snake Game")
-
+import time
 
         
 
-        self.screen.setup(width=600, height=600)     
-        self.screen.exitonclick()   
+class SnakeGame:
+    screen = Screen()
+    screen.tracer(0)
+    screen.tracer(0)
+
+
+    screen.title("Snake Game") 
+    screen.setup(width=1000, height=600)
+    screen.bgcolor("black")
+
+    pos = [(0,0), (-20,0), (-40,0)]
+    corpo = []
+
+    for c in pos:
+        temp = Turtle()
+        temp.color("green")
+        
+        temp.shape("square")
+        temp.penup()
+        temp.goto(c)
+        corpo.append(temp)
+
+        
+    screen.update()
+
+    while True:
+        for c in corpo:
+            c.forward(20)
+            time.sleep(0.1)
+        screen.update()
 
 
 
-
-
-
-play = SnakeGame()
-
+    screen.exitonclick()
+        
+    
+        
