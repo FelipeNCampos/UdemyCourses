@@ -4,6 +4,19 @@ import time
 
 class Snake:
     corpo = []
+    score = 0
+    def add_segment(self):
+        temp = Turtle()
+        temp.shape("square")
+        temp.color("white")
+        temp.penup()
+        self.corpo.append(temp)
+
+    def colision(self):
+        for index in range(1, len(self.corpo)):
+            if self.corpo[0].distance(self.corpo[index]) < 10:
+                return True
+        return False
 
     def __init__(self):
         start_position = [(0,0), (-20,0), (-40,0)]
