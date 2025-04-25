@@ -7,13 +7,15 @@ import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from day_21.Food import Food
+from day_21.Food import Food 
+from day_21.ScoreBoard import ScoreBoard 
 
 class Game:
 
     def __init__(self):
         cobra = Snake()
         screen = Screen()
+        Score = ScoreBoard()
 
         screen.setup(width=600, height=600)
         screen.bgcolor("black")
@@ -40,11 +42,12 @@ class Game:
                 food.refresh()
                 cobra.add_segment()
                 cobra.score += 1
-                print(f"Score: {cobra.score}")
+                Score.increase_score()
 
             if cobra.colision():
                 gamon = False
                 print("Game Over")
                 screen.clear()
+                Score.update_scoreboard()
         screen.exitonclick()
 
