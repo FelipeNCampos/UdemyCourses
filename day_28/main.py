@@ -12,7 +12,8 @@ FONT_NAME = "Courier"
 WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
-TICK = 60000
+TICK = 1000
+timer = None
 
 # ---------------------------- TIMER RESET ------------------------------- # 
 
@@ -37,15 +38,15 @@ def decrementar(c : str):
     hr = int(c.split(":")[0])
     m = int(c.split(":")[1])
 
-    if hr == 0 and m == 1:
-        return "00:00"
 
     if m > 0:
         m -= 1
     if m <= 0:
-        m += 60
+        m += 59
         hr -= 1
 
+    if hr < 0:
+        return "00:00"
     hora = f"{hr:02d}:{m:02d}"
     return hora
 
@@ -56,22 +57,24 @@ def addstar():
     stars.config(text=temp)
 
 def start():
+    global timer 
+    cnv.itemconfig(lbltimer,text=f"{WORK_MIN}:00")
+    sts.config(text='Work',font=("San Francisco",50),fg=RED)
 
-    cnv.itemconfig(lbltimer,text="00:"+str(WORK_MIN+1))
-    sts.config(text='Work',font=("San Francisco",50))
-
-    contador(WORK_MIN)
+    timer = contador((WORK_MIN)*60)
 
 
 def reset():
     temp = ""
 
     stars.config(text=temp)
+    btn_start.config(text="Start")
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
         
 
 def contador(segundos_restantes):
+    global timer
     if segundos_restantes >= 0:
         temp = cnv.itemcget(lbltimer,option="text")
         temp = decrementar(temp)
@@ -80,21 +83,21 @@ def contador(segundos_restantes):
     else:
         if sts.cget(key="text")=="Work":
             addstar()
-            sts.config(text='Break',font=("San Francisco",50))
+            sts.config(text='Break',font=("San Francisco",50),fg=GREEN)
             temp  = stars.cget(key="text")
             if len(temp) >= 8:
-                cnv.itemconfig(lbltimer,text="00:"+str(LONG_BREAK_MIN+1))
-                contador(LONG_BREAK_MIN)
+                cnv.itemconfig(lbltimer,text=f"{LONG_BREAK_MIN}:00")
+                timer = contador((LONG_BREAK_MIN*60)-LONG_BREAK_MIN)
                 reset()
 
             else:
-                cnv.itemconfig(lbltimer,text="00:"+str(SHORT_BREAK_MIN+1))
-                contador(SHORT_BREAK_MIN)
+                cnv.itemconfig(lbltimer,text=f"{SHORT_BREAK_MIN}:00")
+                timer = contador((SHORT_BREAK_MIN*60)-SHORT_BREAK_MIN)
 
         else:
             sts.config(text='Work',font=("San Francisco",50))
             btn_start.grid(row=4,column=0)
-            btn_start.config(text="start again")
+            btn_start.config(text="Start again")
 
 
 # ---------------------------- UI SETUP ------------------------------- #
@@ -109,10 +112,9 @@ sts = Label(text="Timer",font=("San Francisco",50),background=YELLOW)
 sts.grid(row=0,column=1)
 
 
-cnv = Canvas(width=210,height=224,background=YELLOW)
+cnv = Canvas(width=210,height=224,background=YELLOW,highlightthickness=0)
 img = PhotoImage(file="tomato.png")
 cnv.create_image(110,112,image=img)
-
 
 lbltimer = cnv.create_text(110,130,text="00:00",font=("San Francisco",30),fill=WHITE)
 cnv.grid(row=1,column=1)
@@ -128,9 +130,6 @@ stars.grid(row=4,column=1)
 
 btn_reset  = Button(text='Reset',width=10,font=("San Francisco",15),command=reset)
 btn_reset.grid(row=4,column=2)
-
-
-
 
 
 
