@@ -41,7 +41,7 @@ def save():
                 password_entry.delete(0, END)
 
 
-# ---------------------------- UI SETUP ------------------------------- #
+# ---------------------------- UI SETUP ------------------------------- # a
 
 window = Tk()
 window.title("Password Manager")
