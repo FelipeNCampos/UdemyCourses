@@ -1,11 +1,12 @@
-from classes.Ui import Ui
+from classes.Ui import Gui
+
+import json
+
 
 class Main:
-    
+
     def __init__(self):
-        self.gui = Ui()
-        print("teste")
-        self.gui.mainloop()
+        self.gui = Gui()
+    
 
-
-start = Main()
+teste = Main()
