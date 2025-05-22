@@ -1,5 +1,5 @@
 from tkinter import *
-from _Util.Util import Util
+from classes.utility.Util import Util
 import random
 
 class Gui(Tk):
@@ -11,6 +11,15 @@ class Gui(Tk):
         self.minsize(width=600,height=500)
         self.start()
 
+    def start(self):
+        self.interface()
+        self.data = Util.getDictWords()
+
+        self.newWord()
+
+        self.mainloop()
+
+
     def interface(self):
         self.lang = Label(text="Russo",font=(20))
         self.lang.grid(row=0,column=0,columnspan=3,sticky="nsew")
@@ -20,27 +29,22 @@ class Gui(Tk):
         self.kword.grid(row=1,column=0,columnspan=3,rowspan=3,sticky="nsew")
 
 
-        self.nobtn = Button(text="No",font=("arial",15),height=1,width=5,bg="red",fg="white")
+        self.nobtn = Button(text="No",font=("arial",15),height=1,width=5,bg="red",fg="white", command=self.noButton)
         self.nobtn.grid(row=4,column=0,sticky="nsew")
 
-        self.okbtn = Button(text="Yes",font=("arial bold",15),height=1,width=5,bg="green",fg="white")
+        self.okbtn = Button(text="Yes",font=("arial bold",15),height=1,width=5,bg="green",fg="white",command=self.yesButton)
         self.okbtn.grid(row=4,column=2,sticky="nsew")
 
-    def newWord(self,data):
-        self.choice = random.choice(data)
-        self.kword.config(text=self.choice['ru'])
+    def newWord(self):
+        self.choice = random.choice(self.data)
+        know = Util.readKnow()
+
+        while self.choice in know:
+            self.choice = random.choice(self.data)
+
+        self.kword.config(text=self.choice['ru'], bg="lightyellow")
+        self.lang.config(text="Russo")
         
-
-
-
-
-    def start(self):
-        self.interface()
-        data = Util.getDictWords()
-
-        self.newWord(data)
-
-        self.mainloop()
 
 
     def flip(self):
@@ -51,6 +55,11 @@ class Gui(Tk):
             self.lang.config(text="Russo")
             self.kword.config(text=self.choice['ru'],bg="lightyellow")
 
-        Util.addPalavraConhecida()
+    def yesButton(self):
+        Util.addPalavraConhecida(self.choice)
+        self.newWord()
 
-teste = Gui()
+
+    def noButton(self):
+        self.newWord()
+
