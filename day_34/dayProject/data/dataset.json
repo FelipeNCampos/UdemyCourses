@@ -1,0 +1,510 @@
+{
+    "score": 0,
+    "last": 29,
+    "maxscore": 13,
+    "qst": {
+        "response_code": 0,
+        "results": [
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Animals",
+                "question": "A caterpillar has more muscles than humans do.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "Science &amp; Nature",
+                "question": "Hippopotomonstrosesquippedaliophobia is the irrational fear of long words.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Entertainment: Film",
+                "question": "Samuel L. Jackson had the words, &#039;Bad Motherf*cker&#039; in-scripted on his lightsaber during the filming of Star Wars.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Celebrities",
+                "question": "Marilyn Monroe was born on July 1, 1926.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "Science &amp; Nature",
+                "question": "Centripetal force is an apparent force that acts outward on a body moving around a center, arising from the body&#039;s inertia.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "hard",
+                "category": "Entertainment: Video Games",
+                "question": "In &quot;Portal 2&quot;, Cave Johnson started out Aperture Science as a shower curtain company.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "Entertainment: Video Games",
+                "question": "POLYBIUS is a myth arcade cabinet/game",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "Entertainment: Television",
+                "question": "The show &quot;Gilligan&#039;s Island&quot; was cancelled because of low ratings.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "Entertainment: Video Games",
+                "question": "Super Mario Bros. was released in 1990.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Animals",
+                "question": "Rabbits are carnivores.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "Art",
+                "question": "Venus of Willendorf is one of the earliest works of art, depicting the planets Mars and Venus embrace in the heavens at night.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "Entertainment: Video Games",
+                "question": "In Riot Games &quot;League of Legends&quot; the name of Halloween event is called &quot;The Reckoning&quot;.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "Entertainment: Board Games",
+                "question": "In the game &quot;Racko&quot; you may pick up ANY card from the discard pile.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "General Knowledge",
+                "question": "The scientific name for the Southern Lights is Aurora Australis?",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Science: Computers",
+                "question": "The logo for Snapchat is a Bell.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "Vehicles",
+                "question": "The General Motors EV1 was the first street-legal production electric vehicle.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Entertainment: Video Games",
+                "question": "In Pok&eacute;mon Sun and Moon, a male Salandit can evolve to a Salazzle.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "General Knowledge",
+                "question": "It is automatically considered entrapment in the United States if the police sell you illegal substances without revealing themselves.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Sports",
+                "question": "In association football, or soccer, a corner kick is when the game restarts after someone scores a goal.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "Science: Computers",
+                "question": "The last Windows operating system to be based on the Windows 9x kernel was Windows 98.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "Sports",
+                "question": "Tennis was once known as Racquetball.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "hard",
+                "category": "Science: Mathematics",
+                "question": "In Topology, the complement of an open set is a closed set.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Entertainment: Video Games",
+                "question": "&quot;Undertale&quot; is an RPG created by Toby Fox and released in 2015.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Sports",
+                "question": "Shaquille O&rsquo;Neal has only made one three pointer in his career.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "hard",
+                "category": "Entertainment: Film",
+                "question": "YouTube personality Jenna Marbles served as an executive producer of the film Maximum Ride (2016).",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Entertainment: Video Games",
+                "question": "In Dead Space 2, the &#039;Hand Cannon&#039; is a large foam finger.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Entertainment: Video Games",
+                "question": "In Until Dawn, both characters Sam and Mike cannot be killed under any means until the final chapter of the game.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Science: Computers",
+                "question": "Time on Computers is measured via the EPOX System.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "Entertainment: Music",
+                "question": "The country song  &ldquo;A Boy Named Sue&rdquo; was written by Shel Silverstein.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Science &amp; Nature",
+                "question": "A plant that has a life cycle for more than a year is known as an annual.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Entertainment: Video Games",
+                "question": "In Team Fortress 2, the weapon &quot;Your Eternal Reward&quot; is a reference to the 1992 film Aladdin.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Science: Computers",
+                "question": "Pointers were not used in the original C programming language; they were added later on in C++.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "Entertainment: Television",
+                "question": "In &quot;Star Trek&quot;, Klingons are commonly referred to as &quot;Black Elves&quot;.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "Entertainment: Television",
+                "question": "In the TV series Red Dwarf, Kryten&#039;s full name is Kryten 2X4B-523P.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Entertainment: Video Games",
+                "question": "The song &quot;Megalovania&quot; by Toby Fox made its third appearence in the 2015 RPG &quot;Undertale&quot;.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Entertainment: Video Games",
+                "question": "Nintendo&#039;s Luigi was originally just called Green Mario?",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "Vehicles",
+                "question": "When BMW was established in 1916, it was producing automobiles.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Entertainment: Video Games",
+                "question": "The game &quot;Jetpack Joyride&quot; was created by &quot;Redbrick Studios&quot;.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "History",
+                "question": "Brezhnev was the 5th leader of the USSR.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "Entertainment: Video Games",
+                "question": "In Half-Life 2, if you play the zombies&#039; speech in reverse, they actually speak coherent English.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "History",
+                "question": "The Hundred Years&#039; War was fought for more than a hundred years.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Entertainment: Video Games",
+                "question": "Deus Ex (2000) does not feature the World Trade Center because it was destroyed by terrorist attacks according to the game&#039;s plot.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "hard",
+                "category": "Entertainment: Video Games",
+                "question": "The Paradox Interactive game &quot;Stellaris&quot; was released in 2016.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "History",
+                "question": "Kublai Khan is the grandchild of Genghis Khan?",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "Entertainment: Video Games",
+                "question": "The first Maxis game to feature the fictional language &quot;Simlish&quot; was The Sims (2000).",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Entertainment: Video Games",
+                "question": "The Kerbol System (from Kerbal Space Program) includes a Saturn analogue.",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "Geography",
+                "question": "Is Tartu the capital of Estonia?",
+                "correct_answer": "False",
+                "incorrect_answers": [
+                    "True"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "easy",
+                "category": "Science: Computers",
+                "question": "The Python programming language gets its name from the British comedy group &quot;Monty Python.&quot;",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "Celebrities",
+                "question": "Terry Gilliam is the only American member of the comedy troupe &quot;Monty Python.&quot;",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            },
+            {
+                "type": "boolean",
+                "difficulty": "medium",
+                "category": "Science &amp; Nature",
+                "question": "In the periodic table, Potassium&#039;s symbol is the letter K.",
+                "correct_answer": "True",
+                "incorrect_answers": [
+                    "False"
+                ]
+            }
+        ]
+    }
+}
