@@ -20,7 +20,6 @@ class Gui(Tk):
         self.score = self.rw.readScore()
 
         self.qst = self.rq.getQST(self.last)
-        print(self.qst)
 
         self.interface()
         self.mainloop()
