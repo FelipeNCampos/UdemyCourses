@@ -1,0 +1,36 @@
+{
+    "exercises": [
+        {
+            "tag_id": 5,
+            "user_input": "cycling",
+            "duration_min": 20,
+            "met": 10,
+            "nf_calories": 233.33,
+            "photo": {
+                "highres": "https://d2xdmhkmkbyw75.cloudfront.net/exercise/5_highres.jpg",
+                "thumb": "https://d2xdmhkmkbyw75.cloudfront.net/exercise/5_thumb.jpg",
+                "is_user_uploaded": false
+            },
+            "compendium_code": 1040,
+            "name": "road cycling",
+            "description": null,
+            "benefits": null
+        },
+        {
+            "tag_id": 316,
+            "user_input": "jogging",
+            "duration_min": 20,
+            "met": 9,
+            "nf_calories": 210,
+            "photo": {
+                "highres": "https://d2xdmhkmkbyw75.cloudfront.net/exercise/316_highres.jpg",
+                "thumb": "https://d2xdmhkmkbyw75.cloudfront.net/exercise/316_thumb.jpg",
+                "is_user_uploaded": false
+            },
+            "compendium_code": 12040,
+            "name": "jogging",
+            "description": null,
+            "benefits": null
+        }
+    ]
+}

@@ -22,6 +22,7 @@ class App:
         """
     def __init__(self):
         answer = ""
+        print(self.logo)
         while (answer not in ['encode','decode']):
             answer = input("\n\nType 'encode' to encrypt or 'decode' to decrypt: ")
             if (answer not in ['encode','deconde']):

@@ -1,0 +1,20 @@
+{
+    "exercises": [
+        {
+            "tag_id": 316,
+            "user_input": "jogging",
+            "duration_min": 60,
+            "met": 9,
+            "nf_calories": 630,
+            "photo": {
+                "highres": "https://d2xdmhkmkbyw75.cloudfront.net/exercise/316_highres.jpg",
+                "thumb": "https://d2xdmhkmkbyw75.cloudfront.net/exercise/316_thumb.jpg",
+                "is_user_uploaded": false
+            },
+            "compendium_code": 12040,
+            "name": "jogging",
+            "description": null,
+            "benefits": null
+        }
+    ]
+}
