@@ -1,0 +1,39 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+import smtplib as emailer
+from time import sleep
+
+# Configurações do Selenium (modo headless)
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument('--no-sandbox')
+
+# Caminho do chromedriver deve estar no PATH ou na mesma pasta do script
+url = "https://www.amazon.com/Instant-Pot-Multi-Use-Programmable-Pressure/dp/B00FLYWNYQ/ref=pd_rhf_dp_s_pd_sbs_rvi_d_sccl_2_1/147-7959429-9960429?pd_rd_w=R4zwd&content-id=amzn1.sym.6640a844-ab24-4352-ac9b-78899e683a5e&pf_rd_p=6640a844-ab24-4352-ac9b-78899e683a5e&pf_rd_r=9QBNJSFQSHQKNZSYMQ58&pd_rd_wg=EM0qY&pd_rd_r=a4de28fc-9f6d-45ce-aef0-901bf8e4f6ff&pd_rd_i=B00FLYWNYQ&th=1"
+
+with webdriver.Chrome(options=chrome_options) as driver:
+    driver.get(url)
+    sleep(4)  # Aguarda o carregamento da página
+    try:
+        dol_elem = driver.find_element(By.CLASS_NAME, "a-price-whole")
+        cents_elem = driver.find_element(By.CLASS_NAME, "a-price-fraction")
+        dol_text = dol_elem.text.replace(',', '').replace('.', '')
+        cents_text = cents_elem.text
+        full_price = float(f"{dol_text}.{cents_text}")
+        print(full_price)
+        if full_price < 110:
+            with emailer.SMTP('smtp.gmail.com', 587) as connection:
+                connection.starttls()
+                connection.login(user='felipe.n.cmp@gmail.com', password='kmjb ezhj oycf yqha')
+                connection.sendmail(
+                    from_addr='felipe.n.cmp@gmail.com',
+                    to_addrs='felipe_nunes@discente.ufg.br',
+                    msg=f"Subject:Alerta de preço da amazon!\n\nO preço da panela agora é {full_price}".encode("utf-8")
+                )
+        else:
+            print('wait!')
+    except Exception as e:
+        print('Preço não encontrado na página com Selenium. O HTML pode ter mudado ou o scraping foi bloqueado.')
+        print(e)
