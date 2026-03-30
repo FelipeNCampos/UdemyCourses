@@ -1,4 +1,6 @@
 import json
+import os
+from pathlib import Path
 import requests
 from datetime import datetime 
 
@@ -6,12 +8,56 @@ from datetime import datetime
 
 #util
 
+ENV_PATH = Path(__file__).with_name(".env")
+CONFIG_PATH = Path(__file__).with_name(".config")
+
+
+def load_env_values(path):
+    env_values = {}
+
+    if not path.exists():
+        return env_values
+
+    for raw_line in path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+
+        key, value = line.split("=", 1)
+        env_values[key.strip()] = value.strip().strip('"').strip("'")
+
+    return env_values
+
+
 def readJsonasDict(caminho):
     try:
-        with open(caminho, "r") as f :
+        with open(caminho, "r", encoding="utf-8") as f :
             return json.loads(f.read())
-    except:
-        return "Error"
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+
+ENV_VALUES = load_env_values(ENV_PATH)
+CONFIG_VALUES = readJsonasDict(CONFIG_PATH)
+
+
+def get_setting(name, default=None, config_key=None):
+    env_value = os.getenv(name) or ENV_VALUES.get(name)
+
+    if env_value:
+        return env_value
+
+    if config_key:
+        config_value = CONFIG_VALUES.get(config_key)
+
+        if config_value:
+            return config_value
+
+    if default is not None:
+        return default
+
+    raise KeyError(f"Missing required setting: {name}")
 
 
 
@@ -19,11 +65,10 @@ def readJsonasDict(caminho):
 #prog
 
 def createUser(user):
-    data = readJsonasDict("./.config")
-    end = data['end']
+    end = get_setting("PIXELA_ENDPOINT", "https://pixe.la", "end")
     
     params = {
-        "token":"##cotoneteste123",
+        "token": get_setting("PIXELA_TOKEN"),
         "username": user,
         "agreeTermsOfService":"yes",
         "notMinor":"yes"
@@ -37,8 +82,7 @@ def createUser(user):
 
 
 def createGraph(user):
-    data = readJsonasDict("./.config")
-    end = data["end"]
+    end = get_setting("PIXELA_ENDPOINT", "https://pixe.la", "end")
 
 
     config = {
@@ -50,16 +94,15 @@ def createGraph(user):
     }
 
     headers = {
-        "X-USER-TOKEN":"##cotoneteste123"
+        "X-USER-TOKEN": get_setting("PIXELA_TOKEN")
     }
 
 
-    response = requests.post(url=f"https://pixe.la/v1/users/{user}/graphs",json=config, headers=headers)
+    response = requests.post(url=f"{end}/v1/users/{user}/graphs",json=config, headers=headers)
     print(response)
 
 def getGraph(user,id):
-    data = readJsonasDict("./.config")
-    end = data['end']
+    end = get_setting("PIXELA_ENDPOINT", "https://pixe.la", "end")
     target = end+f"/v1/users/{user}/graphs/{id}"
 
     response = requests.get(target)
@@ -68,8 +111,7 @@ def getGraph(user,id):
         f.write(response.text)
 
 def addPixel(user, iden, amont:str):
-    data = readJsonasDict("./.config")
-    end = data['end']
+    end = get_setting("PIXELA_ENDPOINT", "https://pixe.la", "end")
     target = end+f"/v1/users/{user}/graphs/{iden}"
 
     date = datetime.now()
@@ -81,7 +123,7 @@ def addPixel(user, iden, amont:str):
     }
 
     headers = {
-        "X-USER-TOKEN":"##cotoneteste123"
+        "X-USER-TOKEN": get_setting("PIXELA_TOKEN")
     }
 
     response = requests.post(url=target, json=params, headers=headers)

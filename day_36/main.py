@@ -1,6 +1,9 @@
-import requests
-import json
 import datetime
+import json
+import os
+from pathlib import Path
+
+import requests
 
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
@@ -9,16 +12,62 @@ STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 
 
-#util
+ENV_PATH = Path(__file__).with_name(".env")
+CONFIG_PATH = Path(__file__).with_name(".config")
 
-c
+
+def load_env_values(path):
+    env_values = {}
+
+    if not path.exists():
+        return env_values
+
+    for raw_line in path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+
+        key, value = line.split("=", 1)
+        env_values[key.strip()] = value.strip().strip('"').strip("'")
+
+    return env_values
+
+
+def read_json_as_dict(path):
+    try:
+        with open(path, "r", encoding="utf-8") as file:
+            return json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+
+ENV_VALUES = load_env_values(ENV_PATH)
+CONFIG_VALUES = read_json_as_dict(CONFIG_PATH)
+
+
+def get_secret(name, config_key=None):
+    env_value = os.getenv(name) or ENV_VALUES.get(name)
+
+    if env_value:
+        return env_value
+
+    if config_key:
+        config_value = CONFIG_VALUES.get(config_key)
+
+        if config_value:
+            return config_value
+
+    raise KeyError(f"Missing required secret: {name}")
+
+
 ## STEP 1: Use https://newsapi.org/docs/endpoints/everything
 # When STOCK price increase/decreases by 5% between yesterday and the day before yesterday then print("Get News").
 #HINT 1: Get the closing price for yesterday and the day before yesterday. Find the positive difference between the two prices. e.g. 40 - 20 = -20, but the positive difference is 20.
 #HINT 2: Work out the value of 5% of yerstday's closing stock price. 
 def getPorcent():
     params = {
-        "apikey":readJsonasDict("./.config")["stockkey"],
+        "apikey": get_secret("ALPHAVANTAGE_API_KEY", "stockkey"),
         "function":"TIME_SERIES_DAILY",
         "symbol":STOCK,
     }
@@ -45,7 +94,7 @@ def getPorcent():
 
 def getNews():
     params2 = {
-        "apiKey":"696b27f058ca4f0fbd4b439c60bc3729",
+        "apiKey": get_secret("NEWS_API_KEY"),
         "q":COMPANY_NAME
     }
 
