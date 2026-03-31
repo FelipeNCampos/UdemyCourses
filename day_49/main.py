@@ -1,5 +1,4 @@
 from selenium.webdriver.remote.webelement import WebElement
-from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
@@ -54,7 +53,7 @@ drive.get(gym_url)
 
 
 
-def choose_class(drive: WebDriver):
+def choose_class(drive):
     try:
         dias: list[WebElement] = drive.find_elements(By.CLASS_NAME, "Schedule_dayGroup__y79__")
         for dia in dias:

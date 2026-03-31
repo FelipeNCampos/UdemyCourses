@@ -3,3 +3,5 @@ __pycache__
 config.json
 .config
 .env
+venv
+chrome_profile
