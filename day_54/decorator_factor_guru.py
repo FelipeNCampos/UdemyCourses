@@ -4,7 +4,7 @@ class Component():
     decorators.
     """
 
-    def operation(self) -> str:
+    def operation(self) -> str:  # ty:ignore[empty-body]
         pass
 
 
@@ -27,7 +27,7 @@ class Decorator(Component):
     initialize it.
     """
 
-    _component: Component = None
+    _component: Component = None  # ty:ignore[invalid-assignment]
 
     def __init__(self, component: Component) -> None:
         self._component = component
