@@ -1,0 +1,13 @@
+<div class="post-preview">
+    <a href="{{ url_for('show_post', index=post.id) }}">
+        <h2 class="post-title">{% if post %}{{ post.title }}{% else %}Post Title{% endif %}</h2>
+        <h3 class="post-subtitle">{% if post %}{{ post.subtitle }}{% else %}Post Subtitle{% endif %}</h3>
+    </a>
+    {% if author %}
+    <p class="post-meta">
+        Posted by
+        <a href="#!">Start Bootstrap</a>
+        on September 24, 2023
+    </p>
+    {% endif %}
+</div>
