@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% from 'bootstrap5/form.html' import render_form %}
+{% block title %}Login{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<style>
+	html,
+	body {
+		margin: 0;
+		height: 100%;
+		background: #ffffff;
+	}
+
+	main {
+		display: flex;
+		flex: 1;
+		min-height: 0;
+	}
+
+	.login-content {
+		flex: 1;
+		background: #eef1f4;
+		padding: 2rem;
+	}
+
+	.glass-card {
+		width: 100%;
+		max-width: 420px;
+		padding: 2rem;
+		border-radius: 20px;
+		background: rgba(255, 255, 255, 0.35);
+		border: 1px solid rgba(255, 255, 255, 0.45);
+		box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="login-content d-flex justify-content-center align-items-center h-100">
+	<div class="glass-card">
+		<h1 class="text-center mb-4">Login</h1>
+
+			{{ render_form(form) }}
+	</div>
+</div>
+{% endblock %}
