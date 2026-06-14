@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'dev-secret-key-change-me'
 bootstrap = Bootstrap(app)
 
-@app.route("/")
+@app.route("/") # ty: ignore[unsupported-base]
 def home():
     return render_template('index.html')
 

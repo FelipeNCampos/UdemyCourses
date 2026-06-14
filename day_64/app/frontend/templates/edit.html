@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block title %}Edit Movie{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <h1 class="heading">{{ movie.title }}</h1>
+      <p class="description">Edit Movie Rating</p>
+      {{ render_form(
+        form,
+        action=url_for('frontend.edit_movie', movie_id=movie.id),
+        id='edit-movie-form',
+        extra_classes='movie-form-bootstrap',
+        form_group_classes='mb-3'
+      ) }}
+      <div class="d-flex justify-content-between align-items-center mt-3">
+        <a href="{{ url_for('frontend.home') }}" class="btn btn-outline-secondary">Cancel</a>
+        <button type="submit" form="edit-movie-form" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

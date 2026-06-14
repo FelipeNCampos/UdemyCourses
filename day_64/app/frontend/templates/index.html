@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}My Top 10 Movies{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="heading">My Top 10 Movies</h1>
+  <p class="description">These are my all-time favourite movies.</p>
+
+  {% if movie %}
+  <div class="rank-viewer">
+    <a
+      href="{{ url_for('frontend.home', position=previous_position) }}"
+      class="rank-arrow"
+      aria-label="Previous movie"
+    >
+      <i class="fas fa-chevron-left"></i>
+    </a>
+
+    <div class="card rank-card">
+      <div class="front" style="background-image: url('{{ movie.img_url }}');">
+        <div>
+          <p class="large">{{ movie.ranking or position }}</p>
+          <p class="rank-count">{{ position }} of {{ total_movies }}</p>
+        </div>
+      </div>
+      <div class="back">
+        <div>
+          <div class="title">
+            {{ movie.title }} <span class="release_date">({{ movie.year }})</span>
+          </div>
+          <div class="rating">
+            <label>{{ movie.rating or "Not rated" }}</label>
+            {% if movie.rating %}
+            <i class="fas fa-star star"></i>
+            {% endif %}
+          </div>
+          {% if movie.review %}
+          <p class="review">"{{ movie.review }}"</p>
+          {% endif %}
+          <p class="overview">{{ movie.description or "No description available." }}</p>
+
+          <a href="{{ url_for('frontend.edit_movie', movie_id=movie.id) }}" class="button">Update</a>
+          <form
+            action="{{ url_for('frontend.delete_movie', movie_id=movie.id) }}"
+            method="post"
+            class="delete-form"
+          >
+            <button type="submit" class="button delete-button">Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <a
+      href="{{ url_for('frontend.home', position=next_position) }}"
+      class="rank-arrow"
+      aria-label="Next movie"
+    >
+      <i class="fas fa-chevron-right"></i>
+    </a>
+  </div>
+  {% else %}
+  <div class="content">
+    <p class="description">No movies added yet.</p>
+  </div>
+  {% endif %}
+</div>
+<div class="container text-center add">
+  <a href="{{ url_for('frontend.add_movie') }}" class="button">Add Movie</a>
+</div>
+
+{% endblock %}
