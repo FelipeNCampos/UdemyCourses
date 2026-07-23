@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+{% from "bootstrap5/form.html" import render_form %}
+<div class="box">
+	<h1>Register</h1>
+    {{ render_form(form) }}
+</div>
+
+{% endblock %}
+
+{% block styles %}
+<style>
+  form label,
+  .form-label {
+    color: #ffff;
+  }
+</style>
+{% endblock %}
